@@ -1,5 +1,4 @@
-from .client import Client
-from .async_client import AsyncClient
+from .client import Client, AsyncClient
 from .errors import MisrajAPIError, AuthenticationError, RateLimitError, APIConnectionError
 
 __version__ = "0.1.0"
