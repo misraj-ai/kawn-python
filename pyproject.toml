@@ -10,7 +10,6 @@ authors = [
 ]
 description = "The official Python SDK for the Misraj AI API"
 readme = "README.md"
-requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
