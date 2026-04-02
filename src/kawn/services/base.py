@@ -1,11 +1,11 @@
-from ..client import MisrajClient, AsyncMisrajClient
+from ..client import KawnClient, AsyncKawnClient
 
 
 class BaseService:
     """Base synchronous service."""
 
-    def __init__(self, client: MisrajClient):
-        if not isinstance(client, MisrajClient):
+    def __init__(self, client: KawnClient):
+        if not isinstance(client, KawnClient):
             raise TypeError("Expected a MisrajClient instance.")
         self._client = client
 
@@ -13,7 +13,7 @@ class BaseService:
 class AsyncBaseService:
     """Base asynchronous service."""
 
-    def __init__(self, client: AsyncMisrajClient):
-        if not isinstance(client, AsyncMisrajClient):
+    def __init__(self, client: AsyncKawnClient):
+        if not isinstance(client, AsyncKawnClient):
             raise TypeError("Expected a AsyncMisrajClient instance.")
         self._client = client

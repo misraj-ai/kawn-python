@@ -3,12 +3,12 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "misraj.ai"
-version = "0.1.2"
+name = "kawn.ai"
+version = "0.1.0"
 authors = [
-  { name="Khalil Hennara", email="khalil@misraj.ai" },
+  { name="Khalil Hennara", email="hennara@misraj.ai" },
 ]
-description = "The official Python SDK for the Misraj AI API"
+description = "The official Python SDK for the kawn AI API"
 readme = "README.md"
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -26,5 +26,5 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://misraj.ai"
-Source = "https://github.com/misraj-ai/misraj-python"
+Homepage = "https://kawn.ai/en"
+Source = "https://github.com/misraj-ai/kawn-python"

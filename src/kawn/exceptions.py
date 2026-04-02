@@ -1,29 +1,29 @@
-class MisrajAPIError(Exception):
+class KawnAPIError(Exception):
     """Base exception for all Misraj AI API errors."""
     pass
 
 
-class AuthenticationError(MisrajAPIError):
+class AuthenticationError(KawnAPIError):
     """Raised when the API key is invalid or missing."""
     pass
 
 
-class RateLimitError(MisrajAPIError):
+class RateLimitError(KawnAPIError):
     """Raised when the API rate limit is exceeded."""
     pass
 
 
-class InvalidRequestError(MisrajAPIError):
+class InvalidRequestError(KawnAPIError):
     """Raised when the request payload is malformed."""
     pass
 
 
-class PollingTimeoutError(MisrajAPIError):
+class PollingTimeoutError(KawnAPIError):
     """Raised when an asynchronous processing task times out."""
     pass
 
 
-class ProcessingFailedError(MisrajAPIError):
+class ProcessingFailedError(KawnAPIError):
     """Raised when a model fails to process a file (e.g., failed OCR status)."""
     pass
 
@@ -37,4 +37,4 @@ def handle_http_error(response):
     elif 400 <= response.status_code < 500:
         raise InvalidRequestError(f"Client Error {response.status_code}: {response.text}")
     elif response.status_code >= 500:
-        raise MisrajAPIError(f"Server Error {response.status_code}: {response.text}")
+        raise KawnAPIError(f"Server Error {response.status_code}: {response.text}")

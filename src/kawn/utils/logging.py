@@ -14,7 +14,7 @@ def get_logger(name, rank=0):
 
     # Custom formatter with colors
     class ColoredFormatter(logging.Formatter):
-        format_str = f'[misraj][Rank {rank}] %(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        format_str = f'[Kawn][Rank {rank}] %(asctime)s - %(name)s - %(levelname)s - %(message)s'
 
         FORMATS = {
             logging.INFO: Fore.GREEN + format_str + Style.RESET_ALL,

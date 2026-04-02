@@ -21,7 +21,7 @@ def _build_headers(api_key: str) -> dict:
     }
 
 
-class MisrajClient:
+class KawnClient:
     """Synchronous HTTP engine."""
 
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, timeout: Optional[float] = None):
@@ -48,7 +48,7 @@ class MisrajClient:
         self.close()
 
 
-class AsyncMisrajClient:
+class AsyncKawnClient:
     """Asynchronous HTTP engine."""
 
     def __init__(self, api_key: Optional[str] = None, base_url: Optional[str] = None, timeout: Optional[float] = None):

@@ -1,8 +1,5 @@
-import asyncio
-import os
 from typing import Union, List, Optional
 from .base import BaseService, AsyncBaseService
-from ..client import MisrajClient, AsyncMisrajClient
 from ..types.embedding import EmbeddingRequest, EmbeddingResponse
 from ..configs.constant import MAX_EMBEDDING_BATCH_SIZE, EMBEDDING_MODEL
 from ..exceptions import InvalidRequestError
