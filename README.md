@@ -1,6 +1,6 @@
 # misraj.ai Python SDK
 
-The official Python client for interacting with the misraj.ai API.
+The official Python client for interacting with the kawn API by misraj.ai .
 
 ## Installation
 
