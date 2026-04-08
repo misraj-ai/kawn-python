@@ -27,7 +27,7 @@ from kawn import KawnClient
 from kawn.services import EmbeddingService, OCRService
 
 # The client automatically picks up the MISRAJ_API_KEY environment variable.
-client = Client()
+client = KawnClient()
 
 # Initialize our decoupled services using the core client transport
 embeddings_service = EmbeddingService(client)
@@ -69,7 +69,7 @@ from kawn.services import AsyncEmbeddingService, AsyncOCRService
 
 async def main():
     # You can also pass credentials explicitly if bypassing env variables
-    async with AsyncClient(api_key="your-api-key") as client:
+    async with AsyncKawnClient(api_key="your-api-key") as client:
         
         # Initialize Async services
         embed_service = AsyncEmbeddingService(client)
