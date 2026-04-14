@@ -18,7 +18,7 @@ logger = get_logger("[OCR Service]")
 class OCRService(BaseService):
 
     def get_result(self, file_id) -> OCRResult:
-        result_res = self._client.request("GET", f"/ocr/{file_id}/results")
+        result_res = self._client.request("GET", f"/v1/ocr/{file_id}/results")
         return OCRResult(**result_res.json())
 
     def process_file(self,
@@ -36,7 +36,7 @@ class OCRService(BaseService):
         # 1. Upload
         with open(file_path, "rb") as f:
             files = {"file": (file_path.name, f)}
-            res = self._client.request("POST", "/ocr", data=data, files=files)
+            res = self._client.request("POST", "/v1/ocr", data=data, files=files)
 
         file_id = OCRUploadResponse(**res.json()).fileId
 
@@ -46,7 +46,7 @@ class OCRService(BaseService):
         logger.info("Waiting the response...")
         # 2. Poll
         while True:
-            status_res = self._client.request("GET", f"/ocr/{file_id}/status")
+            status_res = self._client.request("GET", f"/v1/ocr/{file_id}/status")
             status_data = OCRStatusResponse(**status_res.json())
             if status_data.status == "completed":
                 break
@@ -87,7 +87,7 @@ class OCRService(BaseService):
 class AsyncOCRService(AsyncBaseService):
 
     async def get_result(self, file_id) -> OCRResult:
-        result_res = await self._client.request("GET", f"/ocr/{file_id}/results")
+        result_res = await self._client.request("GET", f"/v1/ocr/{file_id}/results")
         return OCRResult(**result_res.json())
 
     async def process_file(self,
@@ -102,7 +102,7 @@ class AsyncOCRService(AsyncBaseService):
 
         with open(file_path, "rb") as f:
             file = {"file": (file_path.name, f)}
-            res = await self._client.request("POST", "/ocr", data=data, files=file)
+            res = await self._client.request("POST", "/v1/ocr", data=data, files=file)
 
         file_id = OCRUploadResponse(**res.json()).fileId
 
@@ -112,7 +112,7 @@ class AsyncOCRService(AsyncBaseService):
         logger.info("Waiting the response...")
 
         while True:
-            status_res = await self._client.request("GET", f"/ocr/{file_id}/status")
+            status_res = await self._client.request("GET", f"/v1/ocr/{file_id}/status")
             status_data = OCRStatusResponse(**status_res.json())
             if status_data.status == "completed":
                 break
