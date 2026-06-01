@@ -1,7 +1,7 @@
 import os
 
 # Base configurations
-BASE_URL = os.getenv("MISRAJ_BASE_URL", "https://api-dev.kawn.ai/")
+BASE_URL = os.getenv("MISRAJ_BASE_URL", "https://api.kawn.ai/")
 DEFAULT_TIMEOUT = 60.0
 POLL_INTERVAL = 2.0  # Seconds to wait between status checks for async tasks
 MAX_RETRIES = 3
