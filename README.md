@@ -1,6 +1,6 @@
 # kawn.ai Python SDK
 
-The official Python client for interacting with the [kawn.ai](https://kawn.ai/en) API.
+The official Python client for interacting with the [kawn.ai](https://kawn.ai/en) Models API.
 
 ## Installation
 
@@ -10,7 +10,7 @@ pip install kawn.ai
 
 ## Setup
 
-Set your API key as an environment variable (recommended); if you don't have a key you can get one from [kawn consonle](https://dashboard-dev.kawn.ai/auth/login?redirectTo=%2F)
+Set your API key as an environment variable (recommended);
 
 ```bash
 export MISRAJ_API_KEY="your-api-key"
